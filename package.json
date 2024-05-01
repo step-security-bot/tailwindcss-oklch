@@ -17,9 +17,6 @@
     "fmt": "prettier --check . --experimental-ternaries",
     "fmt:fix": "prettier --write . --experimental-ternaries"
   },
-  "peerDependencies": {
-    "tailwindcss": ">=3.4.0"
-  },
   "dependencies": {
     "colorjs.io": "^0.5.0"
   },
