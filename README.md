@@ -1,3 +1,5 @@
+![NPM Version](https://img.shields.io/npm/v/%40alexaka1%2Ftailwindcss-oklch)
+
 # Tailwind OKLCH
 
 view on: [npm](https://www.npmjs.com/package/@alexaka1/tailwindcss-oklch) - [GitHub](https://github.com/alexaka1/tailwindcss-oklch)
