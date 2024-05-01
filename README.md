@@ -25,9 +25,10 @@ Then, enable the plugin in your Tailwind config:
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  plugins: [require('tailwindcss-oklch')()],
+  plugins: [require('@alexaka1/tailwindcss-oklch')()],
 };
 ```
+The plugin returns a function in order to allow you to change the default values.
 
 ## Features
 
@@ -66,7 +67,7 @@ Precision was added since color.js uses floats to calculate the OKLCH values, wh
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   plugins: [
-    require('tailwindcss-oklch')({
+    require('@alexaka1/tailwindcss-oklch')({
       contrastThreshold: 0.5,
       precision: 8,
       minContrastLightness: 0,
