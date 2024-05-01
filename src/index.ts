@@ -1,6 +1,7 @@
+// @ts-expect-error No types available
 import withAlphaVariable from 'tailwindcss/lib/util/withAlphaVariable';
+// @ts-expect-error No types available
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
-import toColorValue from 'tailwindcss/lib/util/toColorValue';
 import plugin from 'tailwindcss/plugin';
 import Color from 'colorjs.io';
 import utilities from './utilities';
@@ -36,6 +37,7 @@ export default plugin.withOptions<TailwindOklchOptions>(
     minContrastLightness = 0,
     maxContrastLightness = 1,
   } = {}) => {
+    // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/10514
     return ({ matchUtilities, theme, corePlugins, addDefaults }) => {
       addDefaults('infinity', {
         '--tw-infinite': '99999',
@@ -58,16 +60,18 @@ export default plugin.withOptions<TailwindOklchOptions>(
         // Round numbers and turn NaN into 0.
         // NaN occurs for the hue gray colors, that also have a chroma of 0,
         // so we can safely set the hue to 0 instead of NaN.
-        const round = (value: number | null) => {
-          return (
-            (value || 0).toFixed?.(precision).replace(/\.?0+$/, '') || value
-          );
+        const round = (value: undefined | string | number) => {
+          if (value === undefined || typeof value === 'string') {
+            return value;
+          }
+          return value.toFixed(precision).replace(/\.?0+$/, '');
         };
 
         matchUtilities(
           {
-            [key]: (value) => {
-              const colorValue = toColorValue(value);
+            [key]: (value: string | (({}) => string)) => {
+              const colorValue =
+                typeof value === 'function' ? value({}) : value;
               let color;
               try {
                 color = new Color(colorValue);
