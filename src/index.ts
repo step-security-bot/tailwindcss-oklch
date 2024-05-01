@@ -5,6 +5,13 @@ import plugin from 'tailwindcss/plugin';
 import Color from 'colorjs.io';
 import utilities from './utilities';
 
+type TailwindOklchOptions = {
+  contrastThreshold?: number;
+  precision?: number;
+  minContrastLightness?: number;
+  maxContrastLightness?: number;
+};
+
 const propertyColors = Object.fromEntries(
   utilities
     .map(({ key }) => {
@@ -22,7 +29,7 @@ const propertyColors = Object.fromEntries(
     .flat(),
 );
 
-export default plugin.withOptions(
+export default plugin.withOptions<TailwindOklchOptions>(
   ({
     contrastThreshold = 0.6,
     precision = 6,
@@ -42,7 +49,7 @@ export default plugin.withOptions(
         const values = (({ DEFAULT: _, ...colors }) => {
           return colors;
         })(flattenColorPalette(theme(themeKey)));
-        const addProperties = (value) => {
+        const addProperties = (value: string) => {
           return property.reduce((object, prop) => {
             return { ...object, [prop]: value };
           }, {});
@@ -51,7 +58,7 @@ export default plugin.withOptions(
         // Round numbers and turn NaN into 0.
         // NaN occurs for the hue gray colors, that also have a chroma of 0,
         // so we can safely set the hue to 0 instead of NaN.
-        const round = (value) => {
+        const round = (value: number | null) => {
           return (
             (value || 0).toFixed?.(precision).replace(/\.?0+$/, '') || value
           );
