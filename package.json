@@ -6,6 +6,7 @@
   "description": "Bring OKLCH colors to tailwind and introduces handy color utilities",
   "author": "Alex Martossy <github@mail.martossy.hu>",
   "license": "MIT",
+  "repository": "https://github.com/alexaka1/tailwindcss-oklch",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -14,14 +15,17 @@
     "release": "pnpm run build && changeset publish",
     "lint": "tsc"
   },
+  "peerDependencies": {
+    "tailwindcss": ">=3.2.0"
+  },
+  "dependencies": {
+    "colorjs.io": "^0.4.5"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "tailwindcss": "^3.3.3",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "colorjs.io": "^0.4.5"
   },
   "keywords": [
     "tailwind",

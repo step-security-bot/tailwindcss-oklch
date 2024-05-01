@@ -4,7 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ["index.html"],
-  plugins: [require('./../index.js')()],
+  plugins: [require('../index.ts')()],
   theme: {
     extend: {
       colors: {
@@ -18,4 +18,3 @@ module.exports = {
     },
   },
 }
-
