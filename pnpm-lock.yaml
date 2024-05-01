@@ -5,13 +5,13 @@ importers:
   .:
     specifiers:
       '@changesets/cli': ^2.27.1
-      colorjs.io: ^0.4.5
+      colorjs.io: ^0.5.0
       prettier: ^3.2.5
-      tailwindcss: ^3.3.3
+      tailwindcss: ^3.4.3
       tsup: ^8.0.2
       typescript: ^5.4.5
     dependencies:
-      colorjs.io: 0.4.5
+      colorjs.io: 0.5.0
     devDependencies:
       '@changesets/cli': 2.27.1
       prettier: 3.2.5
@@ -953,8 +953,8 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
-  /colorjs.io/0.4.5:
-    resolution: {integrity: sha512-yCtUNCmge7llyfd/Wou19PMAcf5yC3XXhgFoAh6zsO2pGswhUPBaaUh8jzgHnXtXuZyFKzXZNAnyF5i+apICow==}
+  /colorjs.io/0.5.0:
+    resolution: {integrity: sha512-qekjTiBLM3F/sXKks/ih5aWaHIGu+Ftel0yKEvmpbKvmxpNOhojKgha5uiWEUOqEpRjC1Tq3nJRT7WgdBOxIGg==}
     dev: false
 
   /commander/4.1.1:
