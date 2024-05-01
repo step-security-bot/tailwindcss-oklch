@@ -4,25 +4,30 @@
   "private": true,
   "packageManager": "pnpm@7.33.7+sha256.d1581d46ed10f54ff0cbdd94a2373b1f070202b0fbff29f27c2ce01460427043",
   "description": "Bring OKLCH colors to tailwind and introduces handy color utilities",
-  "main": "index.js",
   "author": "Alex Martossy <github@mail.martossy.hu>",
   "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "release": "pnpm run build && changeset publish",
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "tailwindcss": "^3.3.3",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "colorjs.io": "^0.4.5"
+  },
   "keywords": [
     "tailwind",
     "tailwindcss",
     "oklch",
     "colors",
     "color contrast"
-  ],
-  "devDependencies": {
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "colorjs.io": "^0.4.5"
-  },
-  "files": [
-    "index.js",
-    "utilities.js"
   ]
 }
