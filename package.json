@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "pnpm --filter tailwindcss-oklch run build",
-    "release": "pnpm --filter tailwindcss-oklch run release",
+    "release": "pnpm --filter tailwindcss-oklch run release && changeset publish",
     "lint": "pnpm --filter tailwindcss-oklch run lint ",
     "fmt": "prettier --check . --experimental-ternaries",
     "fmt:fix": "prettier --write . --experimental-ternaries",
