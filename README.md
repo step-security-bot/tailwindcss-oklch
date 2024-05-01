@@ -1,6 +1,8 @@
 # Tailwind OKLCH
 
-view on: [npm](https://www.npmjs.com/package/tailwindcss-oklch) - [GitHub](https://github.com/MartijnCuppens/tailwindcss-oklch)
+view on: [npm](https://www.npmjs.com/package/@alexaka1/tailwindcss-oklch) - [GitHub](https://github.com/alexaka1/tailwindcss-oklch)
+
+This repo was cloned from [Martijn Cuppens's tailwindcss-oklch](https://github.com/MartijnCuppens/tailwindcss-oklch). Special thanks to Martijn for creating this plugin.
 
 Brings OKLCH to Tailwind and introduces these helpful utilities:
 

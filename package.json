@@ -1,9 +1,11 @@
 {
   "name": "tailwindcss-oklch",
   "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@7.33.7+sha256.d1581d46ed10f54ff0cbdd94a2373b1f070202b0fbff29f27c2ce01460427043",
   "description": "Bring OKLCH colors to tailwind and introduces handy color utilities",
   "main": "index.js",
-  "author": "Martijn Cuppens",
+  "author": "Alex Martossy <github@mail.martossy.hu>",
   "license": "MIT",
   "keywords": [
     "tailwind",
