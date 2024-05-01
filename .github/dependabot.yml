@@ -8,3 +8,13 @@ updates:
     directory: '/examples/'
     schedule:
       interval: monthly
+
+  - package-ecosystem: npm
+    directory: /examples
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
