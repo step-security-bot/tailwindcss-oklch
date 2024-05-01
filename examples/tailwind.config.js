@@ -3,8 +3,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ["index.html"],
-  plugins: [require('../index.ts')()],
+  content: ['index.html'],
+  plugins: [require('../src')()],
   theme: {
     extend: {
       colors: {
@@ -14,7 +14,7 @@ module.exports = {
       transitionProperty: {
         DEFAULT: `${defaultTheme.transitionProperty.DEFAULT}, outline-color`,
         colors: `${defaultTheme.transitionProperty.colors}, outline-color`,
-      }
+      },
     },
   },
-}
+};

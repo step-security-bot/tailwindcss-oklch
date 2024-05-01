@@ -25,10 +25,8 @@ Then, enable the plugin in your Tailwind config:
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  plugins: [
-    require('tailwindcss-oklch')(),
-  ],
-}
+  plugins: [require('tailwindcss-oklch')()],
+};
 ```
 
 ## Features
@@ -67,13 +65,15 @@ Precision was added since color.js uses floats to calculate the OKLCH values, wh
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  plugins: [require('tailwindcss-oklch')({
-    contrastThreshold: .5,
-    precision: 8,
-    minContrastLightness: 0,
-    maxContrastLightness: 1,
-  })],
-}
+  plugins: [
+    require('tailwindcss-oklch')({
+      contrastThreshold: 0.5,
+      precision: 8,
+      minContrastLightness: 0,
+      maxContrastLightness: 1,
+    }),
+  ],
+};
 ```
 
 ## Demo
@@ -128,8 +128,8 @@ You can later on change the colors without recompiling by setting the LCH values
 ```css
 @layer base {
   :root {
-    --color-primary-l: .32;
-    --color-primary-c: .1;
+    --color-primary-l: 0.32;
+    --color-primary-c: 0.1;
     --color-primary-h: 150;
   }
 }
