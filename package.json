@@ -2,7 +2,7 @@
   "name": "tailwindcss-oklch",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@7.33.7+sha256.d1581d46ed10f54ff0cbdd94a2373b1f070202b0fbff29f27c2ce01460427043",
+  "packageManager": "pnpm@9.1.0-0+sha256.c557b24d2298d9b5e3be7086ebf55a28253b008324d545f72645a6de89844102",
   "description": "Bring OKLCH colors to tailwind and introduces handy color utilities",
   "author": "Alex Martossy <github@mail.martossy.hu>",
   "license": "MIT",
