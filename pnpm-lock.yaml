@@ -1,14 +1,17 @@
 lockfileVersion: 5.4
 
-specifiers:
-  colorjs.io: ^0.4.5
-  tailwindcss: ^3.3.3
+importers:
 
-dependencies:
-  colorjs.io: 0.4.5
-
-devDependencies:
-  tailwindcss: 3.4.3
+  .:
+    specifiers:
+      colorjs.io: ^0.4.5
+      tailwindcss: ^3.3.3
+      typescript: ^5.4.5
+    dependencies:
+      colorjs.io: 0.4.5
+    devDependencies:
+      tailwindcss: 3.4.3
+      typescript: 5.4.5
 
 packages:
 
@@ -694,6 +697,12 @@ packages:
 
   /ts-interface-checker/0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+    dev: true
+
+  /typescript/5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
     dev: true
 
   /util-deprecate/1.0.2:
