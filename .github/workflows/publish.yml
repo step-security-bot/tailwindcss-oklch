@@ -36,7 +36,7 @@ jobs:
         id: changesets
         uses: changesets/action@aba318e9165b45b7948c60273e0b72fce0a64eb9 # v1.4.7
         with:
-          publish: cp -rf README.md src/tailwindcss-oklch && pnpm run release
+          publish: cp README.md src/tailwindcss-oklch && pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
