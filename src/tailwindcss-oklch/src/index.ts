@@ -9,8 +9,8 @@ import utilities from './utilities';
 type TailwindOklchOptions = {
   contrastThreshold?: number;
   precision?: number;
-  minContrastLightness?: number;
-  maxContrastLightness?: number;
+  // minContrastLightness?: number;
+  // maxContrastLightness?: number;
 };
 
 const propertyColors = Object.fromEntries(
@@ -23,7 +23,8 @@ const propertyColors = Object.fromEntries(
         ],
         [
           `${key}-contrast`,
-          `oklch(clamp(var(--tw-min-contrast-lightness), calc(var(--tw-infinite) * (var(--tw-lightness-threshold) - var(--tw-${key}-l) - var(--tw-${key}-l-offset))), var(--tw-max-contrast-lightness)) calc(clamp(0, calc(1 - (calc(var(--tw-infinite) * (var(--tw-lightness-threshold) - var(--tw-${key}-l) - var(--tw-${key}-l-offset))))), 1) * var(--tw-${key}-c)) var(--tw-${key}-h) / <alpha-value>)`,
+          `oklch(clamp(0, calc(var(--tw-infinite) * (var(--tw-lightness-threshold) - var(--tw-${key}-l) - var(--tw-${key}-l-offset))), 1) 0 0 / <alpha-value>)`
+          // `oklch(clamp(var(--tw-min-contrast-lightness), calc(var(--tw-infinite) * (var(--tw-lightness-threshold) - var(--tw-${key}-l) - var(--tw-${key}-l-offset))), var(--tw-max-contrast-lightness)) calc(clamp(0, calc(1 - (calc(var(--tw-infinite) * (var(--tw-lightness-threshold) - var(--tw-${key}-l) - var(--tw-${key}-l-offset))))), 1) * var(--tw-${key}-c)) var(--tw-${key}-h) / <alpha-value>)`,
         ],
       ];
     })
@@ -34,16 +35,16 @@ export default plugin.withOptions<TailwindOklchOptions>(
   ({
     contrastThreshold = 0.6,
     precision = 6,
-    minContrastLightness = 0,
-    maxContrastLightness = 1,
+    // minContrastLightness = 0,
+    // maxContrastLightness = 1,
   } = {}) => {
     // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/10514
     return ({ matchUtilities, theme, corePlugins, addDefaults }) => {
       addDefaults('infinity', {
         '--tw-infinite': '99999',
         '--tw-lightness-threshold': contrastThreshold.toString(),
-        '--tw-min-contrast-lightness': minContrastLightness.toString(),
-        '--tw-max-contrast-lightness': maxContrastLightness.toString(),
+        // '--tw-min-contrast-lightness': minContrastLightness.toString(),
+        // '--tw-max-contrast-lightness': maxContrastLightness.toString(),
       });
       utilities.forEach(({ key, themeKey, property, selector }) => {
         const base = key.split('-').shift();
